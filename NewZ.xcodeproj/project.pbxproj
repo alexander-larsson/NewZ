@@ -12,6 +12,7 @@
 		FA9E4159228A0056007DAB7C /* NewZ.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA9E4157228A0056007DAB7C /* NewZ.xcdatamodeld */; };
 		FA9E415B228A0058007DAB7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA9E415A228A0058007DAB7C /* Assets.xcassets */; };
 		FA9E415E228A0058007DAB7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA9E415C228A0058007DAB7C /* LaunchScreen.storyboard */; };
+		FA9E4169228A1009007DAB7C /* NewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9E4168228A1009007DAB7C /* NewsService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		FA9E415A228A0058007DAB7C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA9E415D228A0058007DAB7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA9E415F228A0058007DAB7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA9E4168228A1009007DAB7C /* NewsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +57,12 @@
 			isa = PBXGroup;
 			children = (
 				FA9E4165228A02ED007DAB7C /* Navigation */,
+				FA9E4166228A0D1C007DAB7C /* NewsService */,
+				FA9E4167228A0D37007DAB7C /* Model */,
 				FA9E4150228A0056007DAB7C /* AppDelegate.swift */,
 				FA9E415A228A0058007DAB7C /* Assets.xcassets */,
 				FA9E415C228A0058007DAB7C /* LaunchScreen.storyboard */,
 				FA9E415F228A0058007DAB7C /* Info.plist */,
-				FA9E4157228A0056007DAB7C /* NewZ.xcdatamodeld */,
 			);
 			path = NewZ;
 			sourceTree = "<group>";
@@ -70,6 +73,22 @@
 				FA9E4152228A0056007DAB7C /* ListViewController.swift */,
 			);
 			path = Navigation;
+			sourceTree = "<group>";
+		};
+		FA9E4166228A0D1C007DAB7C /* NewsService */ = {
+			isa = PBXGroup;
+			children = (
+				FA9E4168228A1009007DAB7C /* NewsService.swift */,
+			);
+			path = NewsService;
+			sourceTree = "<group>";
+		};
+		FA9E4167228A0D37007DAB7C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FA9E4157228A0056007DAB7C /* NewZ.xcdatamodeld */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,6 +163,7 @@
 			files = (
 				FA9E4153228A0056007DAB7C /* ListViewController.swift in Sources */,
 				FA9E4159228A0056007DAB7C /* NewZ.xcdatamodeld in Sources */,
+				FA9E4169228A1009007DAB7C /* NewsService.swift in Sources */,
 				FA9E4151228A0056007DAB7C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

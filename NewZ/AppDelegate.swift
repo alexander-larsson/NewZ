@@ -25,6 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return window
         }()
 
+        UINavigationBar.appearance().barTintColor = UIColor(named: "ZaccoBlue") // Background color
+        UINavigationBar.appearance().tintColor = .black
+
         return true
     }
 
