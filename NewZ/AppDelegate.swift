@@ -14,12 +14,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    private lazy var newsService = NewsService()
+    private lazy var model = Model(persistentContainer: persistentContainer, newsService: newsService)
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         window = {
             let window = UIWindow(frame: UIScreen.main.bounds)
             window.backgroundColor = .white
-            let listVC = ListViewController()
+            let listVC = ListViewController(model: model)
             window.rootViewController = UINavigationController(rootViewController: listVC)
             window.makeKeyAndVisible()
             return window
@@ -81,6 +84,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
+        container.viewContext.automaticallyMergesChangesFromParent = true
         return container
     }()
 

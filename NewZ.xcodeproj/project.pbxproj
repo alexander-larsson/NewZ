@@ -13,6 +13,8 @@
 		FA9E415B228A0058007DAB7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA9E415A228A0058007DAB7C /* Assets.xcassets */; };
 		FA9E415E228A0058007DAB7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA9E415C228A0058007DAB7C /* LaunchScreen.storyboard */; };
 		FA9E4169228A1009007DAB7C /* NewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9E4168228A1009007DAB7C /* NewsService.swift */; };
+		FA9E416C228B52AF007DAB7C /* Program+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9E416A228B52AF007DAB7C /* Program+CoreDataClass.swift */; };
+		FA9E416F228B5BD6007DAB7C /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9E416E228B5BD6007DAB7C /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		FA9E415D228A0058007DAB7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA9E415F228A0058007DAB7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA9E4168228A1009007DAB7C /* NewsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsService.swift; sourceTree = "<group>"; };
+		FA9E416A228B52AF007DAB7C /* Program+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Program+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FA9E416E228B5BD6007DAB7C /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +90,9 @@
 		FA9E4167228A0D37007DAB7C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FA9E416A228B52AF007DAB7C /* Program+CoreDataClass.swift */,
 				FA9E4157228A0056007DAB7C /* NewZ.xcdatamodeld */,
+				FA9E416E228B5BD6007DAB7C /* Model.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -162,7 +168,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA9E4153228A0056007DAB7C /* ListViewController.swift in Sources */,
+				FA9E416C228B52AF007DAB7C /* Program+CoreDataClass.swift in Sources */,
 				FA9E4159228A0056007DAB7C /* NewZ.xcdatamodeld in Sources */,
+				FA9E416F228B5BD6007DAB7C /* Model.swift in Sources */,
 				FA9E4169228A1009007DAB7C /* NewsService.swift in Sources */,
 				FA9E4151228A0056007DAB7C /* AppDelegate.swift in Sources */,
 			);

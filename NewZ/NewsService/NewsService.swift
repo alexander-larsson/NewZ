@@ -13,10 +13,11 @@ fileprivate extension URL {
 }
 
 struct APIResponse: Codable {
-    let programs: [Program]
+    let programs: [ProgramJSON]
 }
 
-struct Program: Codable {
+struct ProgramJSON: Codable {
+    let id: Int
     let name: String
     let description: String
     let programURL: String
@@ -24,6 +25,7 @@ struct Program: Codable {
     let responsibleEditor: String
 
     enum CodingKeys: String, CodingKey {
+        case id = "id"
         case name = "name"
         case description = "description"
         case programURL = "programurl"
