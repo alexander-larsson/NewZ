@@ -71,10 +71,8 @@ class ListViewController: UIViewController {
         do {
             try self.fetchedResultsController.performFetch()
             tableView.reloadData()
-        } catch {
-            let fetchError = error as NSError
-            print("Unable to Perform Fetch Request")
-            print("\(fetchError), \(fetchError.localizedDescription)")
+        } catch let fetchError {
+            print("Unable to Perform Fetch Request, Error: \(fetchError.localizedDescription)")
         }
 
         spinner.startAnimating()

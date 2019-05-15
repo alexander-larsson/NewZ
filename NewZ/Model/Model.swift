@@ -23,7 +23,6 @@ class Model {
         newsService.updatePrograms { result in
 
             guard case .success(let apiResponse) = result else {
-                print("ERROR: Program update failed!")
                 completion(false)
                 return
             }
