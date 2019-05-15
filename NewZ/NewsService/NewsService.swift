@@ -20,16 +20,16 @@ struct ProgramJSON: Codable {
     let id: Int
     let name: String
     let description: String
-    let programURL: String
-    let programImage: String
+    let programUrlString: String
+    let programImageUrlString: String
     let responsibleEditor: String
 
     enum CodingKeys: String, CodingKey {
         case id = "id"
         case name = "name"
         case description = "description"
-        case programURL = "programurl"
-        case programImage = "programimage"
+        case programUrlString = "programurl"
+        case programImageUrlString = "programimage"
         case responsibleEditor = "responsibleeditor"
     }
 }

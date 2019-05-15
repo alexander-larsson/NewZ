@@ -15,7 +15,7 @@ class ListViewController: UIViewController {
 
     private lazy var tableView: UITableView = { [unowned self] in
         let tableView = UITableView()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: String(describing: UITableViewCell.self))
+        tableView.register(ProgramCell.self, forCellReuseIdentifier: String(describing: ProgramCell.self))
         tableView.delegate = self
         tableView.dataSource = self
         return tableView
@@ -50,8 +50,6 @@ class ListViewController: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-
 
     override func loadView() {
         view = tableView
@@ -103,14 +101,15 @@ extension ListViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: UITableViewCell.self)) else {
-            return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ProgramCell.self))
+        guard let programCell = cell as? ProgramCell else {
+            fatalError("Unsupported cell type")
         }
 
         let program = fetchedResultsController.object(at: indexPath)
-        cell.textLabel?.text = program.name
+        programCell.update(with: program)
         
-        return cell
+        return programCell
     }
 }
 

@@ -30,15 +30,18 @@ public class Model {
 
             self.persistentContainer.performBackgroundTask { context in
 
-                // TODO: This needs full sync, create, delete, update
+                // You could add full syncing functionality here to also remove
+                // programs that has been removed from the response received from the API
+                // but I did not do that for this small test assignment.
+
                 for responseProgram in apiResponse.programs {
                     let program = Program.with(id: responseProgram.id, in: context)
 
                     // Update information
                     program.name = responseProgram.name
                     program.programDescription = responseProgram.description
-                    program.programURL = responseProgram.programURL
-                    program.programImage = responseProgram.programImage
+                    program.programUrlString = responseProgram.programUrlString
+                    program.programImageUrlString = responseProgram.programImageUrlString
                     program.responsibleEditor = responseProgram.responsibleEditor
                 }
 
