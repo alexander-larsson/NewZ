@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D048110CBA448EB09557A3B0 /* Pods_NewZ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2B34086CA395752C7747750 /* Pods_NewZ.framework */; };
 		FA9E4151228A0056007DAB7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9E4150228A0056007DAB7C /* AppDelegate.swift */; };
 		FA9E4153228A0056007DAB7C /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9E4152228A0056007DAB7C /* ListViewController.swift */; };
 		FA9E4159228A0056007DAB7C /* NewZ.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA9E4157228A0056007DAB7C /* NewZ.xcdatamodeld */; };
@@ -18,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F604B6F0E91CE726BC5F152 /* Pods-NewZ.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewZ.release.xcconfig"; path = "Pods/Target Support Files/Pods-NewZ/Pods-NewZ.release.xcconfig"; sourceTree = "<group>"; };
+		EFA90BE263B31C056F842EA7 /* Pods-NewZ.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewZ.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NewZ/Pods-NewZ.debug.xcconfig"; sourceTree = "<group>"; };
+		F2B34086CA395752C7747750 /* Pods_NewZ.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewZ.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA9E414D228A0056007DAB7C /* NewZ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewZ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA9E4150228A0056007DAB7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA9E4152228A0056007DAB7C /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -35,17 +39,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D048110CBA448EB09557A3B0 /* Pods_NewZ.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F9A2CC416F6E9F334BD1257 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F2B34086CA395752C7747750 /* Pods_NewZ.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4D74E825CAD36CBE1A9DC84A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EFA90BE263B31C056F842EA7 /* Pods-NewZ.debug.xcconfig */,
+				2F604B6F0E91CE726BC5F152 /* Pods-NewZ.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		FA9E4144228A0056007DAB7C = {
 			isa = PBXGroup;
 			children = (
 				FA9E414F228A0056007DAB7C /* NewZ */,
 				FA9E414E228A0056007DAB7C /* Products */,
+				4D74E825CAD36CBE1A9DC84A /* Pods */,
+				1F9A2CC416F6E9F334BD1257 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,9 +128,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA9E4162228A0058007DAB7C /* Build configuration list for PBXNativeTarget "NewZ" */;
 			buildPhases = (
+				5C75BF4BB79324F0FA9E2C65 /* [CP] Check Pods Manifest.lock */,
 				FA9E4149228A0056007DAB7C /* Sources */,
 				FA9E414A228A0056007DAB7C /* Frameworks */,
 				FA9E414B228A0056007DAB7C /* Resources */,
+				32B72C9BF823B0ACBE3412CE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -161,6 +187,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		32B72C9BF823B0ACBE3412CE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-NewZ/Pods-NewZ-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Nuke/Nuke.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nuke.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NewZ/Pods-NewZ-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5C75BF4BB79324F0FA9E2C65 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NewZ-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FA9E4149228A0056007DAB7C /* Sources */ = {
@@ -308,6 +373,7 @@
 		};
 		FA9E4163228A0058007DAB7C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EFA90BE263B31C056F842EA7 /* Pods-NewZ.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -326,6 +392,7 @@
 		};
 		FA9E4164228A0058007DAB7C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F604B6F0E91CE726BC5F152 /* Pods-NewZ.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

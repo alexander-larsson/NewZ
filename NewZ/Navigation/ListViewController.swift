@@ -60,7 +60,6 @@ class ListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "NewZ"
-
         render()
     }
 
@@ -110,6 +109,7 @@ extension ListViewController: UITableViewDataSource {
 
         let program = fetchedResultsController.object(at: indexPath)
         cell.textLabel?.text = program.name
+        
         return cell
     }
 }
