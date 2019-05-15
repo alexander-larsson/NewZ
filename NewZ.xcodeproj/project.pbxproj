@@ -17,6 +17,8 @@
 		FA9E416C228B52AF007DAB7C /* Program+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9E416A228B52AF007DAB7C /* Program+CoreDataClass.swift */; };
 		FA9E416F228B5BD6007DAB7C /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9E416E228B5BD6007DAB7C /* Model.swift */; };
 		FA9E4172228C8681007DAB7C /* ProgramCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9E4171228C8681007DAB7C /* ProgramCell.swift */; };
+		FA9E4174228C8F15007DAB7C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9E4173228C8F15007DAB7C /* DetailViewController.swift */; };
+		FA9E4177228C9939007DAB7C /* NSLayoutConstraint+WithPriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9E4176228C9939007DAB7C /* NSLayoutConstraint+WithPriority.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		FA9E416A228B52AF007DAB7C /* Program+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Program+CoreDataClass.swift"; sourceTree = "<group>"; };
 		FA9E416E228B5BD6007DAB7C /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		FA9E4171228C8681007DAB7C /* ProgramCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramCell.swift; sourceTree = "<group>"; };
+		FA9E4173228C8F15007DAB7C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		FA9E4176228C9939007DAB7C /* NSLayoutConstraint+WithPriority.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+WithPriority.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,7 @@
 		FA9E414F228A0056007DAB7C /* NewZ */ = {
 			isa = PBXGroup;
 			children = (
+				FA9E4175228C9901007DAB7C /* Extensions */,
 				FA9E4170228C866D007DAB7C /* Cells */,
 				FA9E4165228A02ED007DAB7C /* Navigation */,
 				FA9E4166228A0D1C007DAB7C /* NewsService */,
@@ -102,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				FA9E4152228A0056007DAB7C /* ListViewController.swift */,
+				FA9E4173228C8F15007DAB7C /* DetailViewController.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -130,6 +136,14 @@
 				FA9E4171228C8681007DAB7C /* ProgramCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		FA9E4175228C9901007DAB7C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FA9E4176228C9939007DAB7C /* NSLayoutConstraint+WithPriority.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,9 +261,11 @@
 				FA9E416C228B52AF007DAB7C /* Program+CoreDataClass.swift in Sources */,
 				FA9E4172228C8681007DAB7C /* ProgramCell.swift in Sources */,
 				FA9E4159228A0056007DAB7C /* NewZ.xcdatamodeld in Sources */,
+				FA9E4177228C9939007DAB7C /* NSLayoutConstraint+WithPriority.swift in Sources */,
 				FA9E416F228B5BD6007DAB7C /* Model.swift in Sources */,
 				FA9E4169228A1009007DAB7C /* NewsService.swift in Sources */,
 				FA9E4151228A0056007DAB7C /* AppDelegate.swift in Sources */,
+				FA9E4174228C8F15007DAB7C /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

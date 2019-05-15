@@ -31,14 +31,11 @@ class ProgramCell: UITableViewCell {
         contentView.addSubview(logoImageView)
         contentView.addSubview(titleLabel)
 
-        let logoHeighConstraint = logoImageView.heightAnchor.constraint(equalToConstant: 60)
-        logoHeighConstraint.priority = UILayoutPriority(rawValue: 999)
-
         NSLayoutConstraint.activate([
             logoImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
             logoImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             logoImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            logoHeighConstraint,
+            logoImageView.heightAnchor.constraint(equalToConstant: 60).with(priority: UILayoutPriority(rawValue: 999)),
             logoImageView.widthAnchor.constraint(equalTo: logoImageView.heightAnchor),
 
             titleLabel.leadingAnchor.constraint(equalTo: logoImageView.trailingAnchor, constant: 8),

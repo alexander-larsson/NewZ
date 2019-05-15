@@ -92,6 +92,10 @@ class ListViewController: UIViewController {
 extension ListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+
+        let program = fetchedResultsController.object(at: indexPath)
+        let detailVC = DetailViewController(program: program)
+        navigationController?.pushViewController(detailVC, animated: true)
     }
 }
 

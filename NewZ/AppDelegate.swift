@@ -23,12 +23,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let window = UIWindow(frame: UIScreen.main.bounds)
             window.backgroundColor = .white
             let listVC = ListViewController(model: model)
-            window.rootViewController = UINavigationController(rootViewController: listVC)
+            let navigationController = UINavigationController(rootViewController: listVC)
+            navigationController.navigationBar.prefersLargeTitles = true
+            window.rootViewController = navigationController
             window.makeKeyAndVisible()
             return window
         }()
 
-        UINavigationBar.appearance().barTintColor = UIColor(named: "ZaccoBlue") // Background color
         UINavigationBar.appearance().tintColor = .black
 
         return true
