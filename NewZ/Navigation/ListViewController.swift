@@ -11,7 +11,7 @@ import CoreData
 
 class ListViewController: UIViewController {
 
-    let model: Model
+    private let model: Model
 
     private lazy var tableView: UITableView = { [unowned self] in
         let tableView = UITableView()
@@ -21,20 +21,23 @@ class ListViewController: UIViewController {
         return tableView
     }()
 
-    let spinner: UIActivityIndicatorView = {
+    private let spinner: UIActivityIndicatorView = {
         let spinner = UIActivityIndicatorView()
         spinner.hidesWhenStopped = true
         spinner.style = .gray
         return spinner
     }()
 
-    fileprivate lazy var fetchedResultsController: NSFetchedResultsController<Program> = {
+    private lazy var fetchedResultsController: NSFetchedResultsController<Program> = {
         let fetchRequest: NSFetchRequest<Program> = Program.fetchRequest()
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: #keyPath(Program.name), ascending: true)]
+        fetchRequest.sortDescriptors = [
+            NSSortDescriptor(key: #keyPath(Program.isFavourite), ascending: false),
+            NSSortDescriptor(key: #keyPath(Program.name), ascending: true)
+        ]
         let fetchedResultsController = NSFetchedResultsController(
             fetchRequest: fetchRequest,
             managedObjectContext: model.persistentContainer.viewContext,
-            sectionNameKeyPath: nil,
+            sectionNameKeyPath: #keyPath(Program.section),
             cacheName: nil
         )
         fetchedResultsController.delegate = self
@@ -100,8 +103,13 @@ extension ListViewController: UITableViewDelegate {
 }
 
 extension ListViewController: UITableViewDataSource {
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return fetchedResultsController.sections?.count ?? 0
+    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return fetchedResultsController.fetchedObjects?.count ?? 0
+        return fetchedResultsController.sections?[section].numberOfObjects ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -114,6 +122,10 @@ extension ListViewController: UITableViewDataSource {
         programCell.update(with: program)
         
         return programCell
+    }
+
+    public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return fetchedResultsController.sections?[section].name
     }
 }
 

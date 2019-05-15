@@ -2,6 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.99" systemVersion="18E226" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Program" representedClassName="Program" syncable="YES" codeGenerationType="category">
         <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="isFavourite" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="programDescription" attributeType="String" syncable="YES"/>
         <attribute name="programImageUrlString" attributeType="String" syncable="YES"/>
@@ -9,6 +10,6 @@
         <attribute name="responsibleEditor" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Program" positionX="-63" positionY="-18" width="128" height="135"/>
+        <element name="Program" positionX="-63" positionY="-18" width="128" height="150"/>
     </elements>
 </model>

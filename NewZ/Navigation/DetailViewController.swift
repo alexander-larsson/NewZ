@@ -52,7 +52,16 @@ class DetailViewController: UIViewController {
         return button
     }()
 
-    let program: Program
+    private lazy var toggleFavouriteButton: UIButton = { [unowned self] in
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitleColor(.black, for: .normal)
+        updateToggleButtonTitle(for: button)
+        button.addTarget(self, action: #selector(didPressToggleFavouriteButton), for: .touchUpInside)
+        return button
+        }()
+
+   private let program: Program
 
     init(program: Program) {
         self.program = program
@@ -75,6 +84,14 @@ class DetailViewController: UIViewController {
         responsibleEditorLabel.text = "Ansvarig utgivare: \(program.responsibleEditor!)"
         if let imageUrl = URL(string: program.programImageUrlString!) { // There is always a string
             Nuke.loadImage(with: imageUrl, into: imageView)
+        }
+    }
+
+    private func updateToggleButtonTitle(for button: UIButton) {
+        if program.isFavourite {
+            button.setTitle("Ta bort favorit", for: .normal)
+        } else {
+            button.setTitle("Lägg till som favorit", for: .normal)
         }
     }
 
@@ -103,6 +120,7 @@ class DetailViewController: UIViewController {
         contentView.addSubview(descriptionLabel)
         contentView.addSubview(responsibleEditorLabel)
         contentView.addSubview(openWebsiteButton)
+        contentView.addSubview(toggleFavouriteButton)
 
         NSLayoutConstraint.activate([
             imageView.topAnchor.constraint(equalTo: contentView.topAnchor),
@@ -120,14 +138,22 @@ class DetailViewController: UIViewController {
 
             openWebsiteButton.topAnchor.constraint(equalTo: responsibleEditorLabel.bottomAnchor, constant: 20),
             openWebsiteButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-            openWebsiteButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20)
+
+            toggleFavouriteButton.topAnchor.constraint(equalTo: openWebsiteButton.bottomAnchor, constant: 20),
+            toggleFavouriteButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            toggleFavouriteButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20)
         ])
     }
 
-    @objc func didPressOpenInWebButton() {
+    @objc private func didPressOpenInWebButton() {
         guard let url = URL(string: program.programUrlString!) else { return } // There is always a string
         guard UIApplication.shared.canOpenURL(url) else { return }
         UIApplication.shared.open(url)
+    }
+
+    @objc private func didPressToggleFavouriteButton() {
+        program.toggleFavourite()
+        updateToggleButtonTitle(for: toggleFavouriteButton)
     }
 
 }

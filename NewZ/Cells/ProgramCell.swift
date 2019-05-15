@@ -14,7 +14,7 @@ class ProgramCell: UITableViewCell {
     private lazy var titleLabel: UILabel = {
         let titleLabel = UILabel()
         titleLabel.textColor = .black
-        titleLabel.numberOfLines = 0
+        titleLabel.numberOfLines = 0 // Unlimited lines
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         return titleLabel
     }()
@@ -48,12 +48,11 @@ class ProgramCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    public func update(with program: Program) {
+    func update(with program: Program) {
         titleLabel.text = program.name
 
         if let imageUrl = URL(string: program.programImageUrlString!) { // There is always a string
             Nuke.loadImage(with: imageUrl, into: logoImageView)
         }
-
     }
 }

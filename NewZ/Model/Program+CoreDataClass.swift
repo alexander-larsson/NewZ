@@ -13,7 +13,11 @@ import CoreData
 @objc(Program)
 public class Program: NSManagedObject {
 
-    public class func with(id: Int, in context: NSManagedObjectContext) -> Program {
+    @objc var section: String {
+        return isFavourite ? "Favoriter" : "Alla program"
+    }
+
+    class func with(id: Int, in context: NSManagedObjectContext) -> Program {
         let request: NSFetchRequest<Program> = Program.fetchRequest()
         request.predicate = NSPredicate(format: "%K = %@", #keyPath(Program.id), NSNumber(value: id))
         request.fetchLimit = 1
@@ -25,6 +29,19 @@ public class Program: NSManagedObject {
             let program = NSManagedObject(entity: entity, insertInto: context) as! Program
             program.id = Int64(id)
             return program
+        }
+    }
+
+    func toggleFavourite() {
+        guard let context =  self.managedObjectContext else { return }
+
+        isFavourite = !isFavourite
+
+        // Save the context
+        do {
+            try context.save()
+        } catch {
+            fatalError("Error saving background context")
         }
     }
 

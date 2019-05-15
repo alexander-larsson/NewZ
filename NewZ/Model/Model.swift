@@ -9,10 +9,10 @@
 import Foundation
 import CoreData
 
-public class Model {
+class Model {
 
-    let persistentContainer: NSPersistentContainer
-    let newsService: NewsService
+    internal let persistentContainer: NSPersistentContainer
+    private let newsService: NewsService
 
     init(persistentContainer: NSPersistentContainer, newsService: NewsService) {
         self.persistentContainer = persistentContainer
