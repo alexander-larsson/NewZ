@@ -32,6 +32,28 @@ public class Program: NSManagedObject {
         }
     }
 
+    func update(with json: ProgramJSON) {
+        if self.name != json.name {
+            self.name = json.name
+        }
+
+        if self.programDescription != json.description {
+            self.programDescription = json.description
+        }
+
+        if self.programUrlString != json.programUrlString {
+            self.programUrlString = json.programUrlString
+        }
+
+        if self.programImageUrlString != json.programImageUrlString {
+            self.programImageUrlString = json.programImageUrlString
+        }
+
+        if self.responsibleEditor != json.responsibleEditor {
+            self.responsibleEditor = json.responsibleEditor
+        }
+    }
+
     func toggleFavourite() {
         guard let context =  self.managedObjectContext else { return }
 

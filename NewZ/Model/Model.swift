@@ -35,13 +35,7 @@ class Model {
 
                 for responseProgram in apiResponse.programs {
                     let program = Program.with(id: responseProgram.id, in: context)
-
-                    // Update information
-                    program.name = responseProgram.name
-                    program.programDescription = responseProgram.description
-                    program.programUrlString = responseProgram.programUrlString
-                    program.programImageUrlString = responseProgram.programImageUrlString
-                    program.responsibleEditor = responseProgram.responsibleEditor
+                    program.update(with: responseProgram)
                 }
 
                 // Save the context
